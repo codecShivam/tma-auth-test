@@ -38,14 +38,31 @@ const HomePage = () => {
       <h1>Welcome to Telegram Mini App</h1>
       <button id="auth-button">Authenticate</button>
       {/* Show user details if authenticated */}
-      {user && (
+      {user ? (
         <div id="user-details">
           <h2>User Details</h2>
+          <p>Authenticated successfully</p>
+          <p>Here are your details:</p>
+          <br />
+          <div> 
+
+            {user.first_name + user}
+            </div>
           <p>Name: {user.first_name}</p>
           {user.phone_number && <p>Phone Number: {user.phone_number}</p>}
           {user.username && <p>Username: {user.username}</p>}
         </div>
-      )}
+      )
+
+        : (
+          <div id="user-details">
+            <h2>User Details</h2>
+            <p>Not authenticated yet</p>
+          </div>
+        )
+
+
+      }
     </div>
   );
 };
