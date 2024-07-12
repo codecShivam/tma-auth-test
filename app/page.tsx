@@ -53,6 +53,7 @@ const HomePage = () => {
           {user.username && <p>Username: {user.username}</p>}
         </div>
       )
+      
 
         : (
           <div id="user-details">
